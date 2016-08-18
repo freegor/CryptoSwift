@@ -41,7 +41,7 @@ extension UInt32 {
             return
         }
         
-        let bitsCount = UInt32(sizeof(UInt32.self) * 8)
+        let bitsCount = UInt32(MemoryLayout<UInt32>.size * 8)
         let shiftCount = Swift.min(count, bitsCount - 1)
         var shiftedValue:UInt32 = 0;
         
@@ -67,7 +67,7 @@ extension UInt32 {
             return
         }
         
-        let bitsCount = UInt32(sizeofValue(self) * 8)
+        let bitsCount = UInt32(MemoryLayout<UInt32>.size * 8)
 
         if (count >= bitsCount) {
             return
