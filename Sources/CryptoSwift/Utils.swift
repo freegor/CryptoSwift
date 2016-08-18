@@ -55,7 +55,7 @@ func reversed(_ uint32 : UInt32) -> UInt32 {
 func sliceToUInt32Array(_ slice: ArraySlice<UInt8>) -> Array<UInt32> {
     var result = Array<UInt32>()
     result.reserveCapacity(16)
-    for idx in stride(from: slice.startIndex, to: slice.endIndex, by: MemoryLayout<>.sizesizeof(UInt32.self)) {
+    for idx in stride(from: slice.startIndex, to: slice.endIndex, by: MemoryLayout<UInt32>.size) {
         let val1:UInt32 = (UInt32(slice[idx.advanced(by: 3)]) << 24)
         let val2:UInt32 = (UInt32(slice[idx.advanced(by: 2)]) << 16)
         let val3:UInt32 = (UInt32(slice[idx.advanced(by: 1)]) << 8)
