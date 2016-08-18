@@ -18,7 +18,7 @@ extension UInt32: _UInt32Type {}
 
 /** array of bytes */
 extension UInt32 {
-    public func bytes(totalBytes: Int = sizeof(UInt32.self)) -> Array<UInt8> {
+    public func bytes(totalBytes: Int = MemoryLayout<UInt32>.size) -> Array<UInt8> {
         return arrayOfBytes(value: self, length: totalBytes)
     }
 
